@@ -4,6 +4,7 @@ import { IFollows } from '@/models/followsModel';
 
 import { FollowersUsersCard } from '@/components/cards/followers-card';
 import { getUserByUsername } from '@/actions/users';
+import { CheckIsAuth } from '@/data/check-is-auth';
 
 interface Props {
   params: { username: string };
@@ -11,7 +12,7 @@ interface Props {
 
 export default async function FollowersPage({ params }: Props) {
   const { user } = await getUserByUsername(params.username);
-  const { user: loggedInUser } = await currentUser();
+  const { user: loggedInUser, isAuthenticated } = await CheckIsAuth();
   const followers = await getUserFollowers(user?._id);
 
   return (
@@ -24,6 +25,7 @@ export default async function FollowersPage({ params }: Props) {
           <div className="flex flex-col gap-4">
             {followers?.map((follower: IFollows, index: number) => (
               <FollowersUsersCard
+                isAuth={isAuthenticated}
                 key={index}
                 follower={follower.followerId}
                 loggedInUser={loggedInUser}
