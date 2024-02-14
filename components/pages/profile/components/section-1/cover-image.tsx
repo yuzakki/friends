@@ -110,7 +110,7 @@ export function ProfileCover({ user, isExternalUser }: Props) {
         <>
           {user?.cover ? (
             <Image
-              className="object-cover h-fll w-full"
+              className="object-cover h-full w-full"
               src={user?.cover}
               blurDataURL={user?.cover}
               placeholder="blur"
