@@ -15,9 +15,14 @@ import { ShowIcon } from '@/components/show-icon';
 interface Props {
   follower: IUser;
   loggedInUser: IUser | null | undefined;
+  isAuth?: boolean;
 }
 
-export async function FollowersUsersCard({ follower, loggedInUser }: Props) {
+export async function FollowersUsersCard({
+  follower,
+  loggedInUser,
+  isAuth,
+}: Props) {
   let isUserFollowed = await checkFollowRelationship(follower?._id);
 
   async function handleFollow() {
@@ -86,7 +91,7 @@ export async function FollowersUsersCard({ follower, loggedInUser }: Props) {
           className="space-x-2"
           action={isUserFollowed ? handleUnFollow : handleFollow}
         >
-          <FollowButtons isFollowed={isUserFollowed} />
+          <FollowButtons isDisabled={!isAuth} isFollowed={isUserFollowed} />
         </form>
       </div>
     </div>
