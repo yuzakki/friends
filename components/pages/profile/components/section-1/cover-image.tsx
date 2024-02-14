@@ -117,6 +117,7 @@ export function ProfileCover({ user, isExternalUser }: Props) {
               alt="Cover Image"
               height={176}
               width={9999}
+              quality={100}
               priority
             />
           ) : (
