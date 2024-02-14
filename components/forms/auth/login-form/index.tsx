@@ -21,7 +21,6 @@ import { FormSuccess } from '@/components/forms/form-success';
 
 import { ForgotPasswordBtn } from '../components/buttons';
 import { InputField } from '../components/input-field';
-import { redirect } from 'next/navigation';
 
 // GOOD
 
