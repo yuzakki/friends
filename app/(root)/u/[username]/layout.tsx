@@ -41,7 +41,7 @@ async function UsernameLayout({ children, params }: UsernameLayoutProps) {
   if (!user) {
     return (
       <div className="flex flex-col items-center mt-20 w-full text-center">
-        <p className="text-red-500 text-2xl font-semibold mb-4">Error</p>
+        <p className="text-red-500 text-2xl font-semibold mb-4">User does not exist!</p>
       </div>
     );
   }
