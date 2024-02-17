@@ -111,8 +111,6 @@ export function SignUpForm() {
           )}
         />
 
-        <ForgotPasswordBtn />
-
         <FormError message={status.error} />
         <FormSuccess message={status.success} />
 
