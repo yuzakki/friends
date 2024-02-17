@@ -91,7 +91,7 @@ export async function FollowersUsersCard({
           className="space-x-2"
           action={isUserFollowed ? handleUnFollow : handleFollow}
         >
-          <FollowButtons isDisabled={!isAuth} isFollowed={isUserFollowed} />
+          <FollowButtons isDisabled={isAuth} isFollowed={isUserFollowed} />
         </form>
       </div>
     </div>
